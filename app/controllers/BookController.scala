@@ -12,6 +12,10 @@ import org.joda.time.DateTime
 
 class BookController @Inject() (bookDao: BookDao) extends Controller {
 
+  /**
+    *
+    * @return
+    */
   def getHardcoded = Action {
     val book = Book(
       "123-45678",
@@ -36,6 +40,11 @@ class BookController @Inject() (bookDao: BookDao) extends Controller {
     }
   }
 
+  /**
+    * Populates the elasticsearch node (external) with stub data.
+    *
+    * @return
+    */
   def populate() = Action.async {
     /* You can easily convert this endpoint to a bulk insert. Simply parse a `List[Book]` from
        JSON body and pass it instead of `cannedBulkInput` here. */
