@@ -8,8 +8,13 @@ lazy val root = (project in file("."))
 
 scalaVersion := "2.11.8"
 
+val PlayVersion = "2.5.12"
+val Elastic4sVersion = "5.2.5"
+
 libraryDependencies ++= Seq(
   "com.evojam" %% "play-elastic4s" % "0.3.1",
+  "com.sksamuel.elastic4s" %% "elastic4s-embedded" % Elastic4sVersion % Test,
+  "com.typesafe.play" %% "play-specs2" % PlayVersion % Test,
   "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.0" % "test"
 )
 
