@@ -1,6 +1,6 @@
 name := """smartdata"""
 
-version := "1.2"
+version := "1.0"
 
 lazy val root = (project in file("."))
   .enablePlugins(PlayScala, PlayAkkaHttpServer)
@@ -9,7 +9,8 @@ lazy val root = (project in file("."))
 scalaVersion := "2.11.8"
 
 libraryDependencies ++= Seq(
-  "com.evojam" %% "play-elastic4s" % "0.3.1"
+  "com.evojam" %% "play-elastic4s" % "0.3.1",
+  "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.0" % "test"
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"

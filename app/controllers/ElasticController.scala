@@ -14,8 +14,8 @@ import com.evojam.play.elastic4s.PlayElasticFactory
 import com.evojam.play.elastic4s.configuration.ClusterSetup
 
 
-class ElasticController @Inject() (cs: ClusterSetup, elasticFactory: PlayElasticFactory) extends
-    Controller with ElasticDsl {
+class ElasticController @Inject()(cs: ClusterSetup, elasticFactory: PlayElasticFactory) extends
+  Controller with ElasticDsl {
 
   private val logger = Logger(getClass)
   private lazy val client = elasticFactory(cs)
